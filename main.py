@@ -49,8 +49,6 @@ morseDict= {
 
 }
 
-
-
 def fromLetterToMorse(index):
     #letter = sys.stdin.readline().rstrip()
     for key, value in morseDict.items():
@@ -77,34 +75,11 @@ def morseToEnglish():
             print(fromMorseToLetter(letter), end= '')
         print(' ', end= '')
 
-def printSequence():
-    print("Please put in an English letter: ")
-    letter = sys.stdin.readline().rstrip()
-    for key, value in morseDict.items():
-        if letter == key:
-            print( "'" + letter + "' is " + morseDict.get(key))
-
-def printLetter():
-    print("Please put in a Morse Code Sequence: ")
-    sequence = sys.stdin.readline().rstrip()
-    for key, value in morseDict.items():
-        if sequence == value:
-            print("this translates to: " + key)
-            return
-
-    print("this translates to: does not exist")
-
-
 
 def main():
-    print("Do you want to convert a letter/number to morse(1), a morse code sequence to a letter(2), a word/sentence(3),"
-          "or morse to word/sentence(4)?")
+    print("Do you want to convert word/sentence to morse(1), or morse to word/sentence(2)?")
     answer = int(sys.stdin.readline())
     if answer == 1:
-        printSequence()
-    elif answer == 2:
-        printLetter()
-    elif answer == 3:
         wordToMorse()
     else:
         morseToEnglish()
